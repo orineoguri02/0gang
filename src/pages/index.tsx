@@ -1,35 +1,22 @@
-import { useEffect } from "react";
 import { NextPage } from "next";
+import { useEffect } from "react";
 import Image from "next/image";
 import styles from "../styles/main.module.css";
-import { useSubjectStore } from "../store/useSubjectStore";
-
-interface Card {
-  id: number;
-  text: string;
-}
-
-const cards: Card[] = [
-  { id: 1, text: "오늘 배운걸 어디에 접목할 수 있을까?" },
-  { id: 2, text: "오늘 새롭게 이해하게 된 개념이나 지식은?" },
-  { id: 3, text: "프로젝트에서 배운 핵심 원리는?" },
-  { id: 4, text: "수업 중 가장 흥미로웠던 토론 주제는?" },
-  { id: 5, text: "다음에 더 깊게 다뤄보고 싶은 주제는?" },
-  { id: 6, text: "오늘 배운 내용을 실무에 어떻게 적용할까?" },
-];
+import { useSubjectStore, Card } from "../store/useSubjectStore";
 
 const Home: NextPage = () => {
-  const { subjects, count, fetchSubjects } = useSubjectStore();
+  const { subjects, count, cards, fetchData } = useSubjectStore();
   const userId = "1";
   const userName = "이건우";
   const currentPage = 1;
 
   useEffect(() => {
-    fetchSubjects(userId);
-  }, [fetchSubjects, userId]);
+    fetchData(userId);
+  }, [fetchData, userId]);
 
   return (
     <div className="min-h-screen bg-gray-50">
+      {/* Header */}
       <header className="flex items-center justify-between px-8 py-6">
         <div className="flex items-center space-x-4">
           <Image src="/logo.jpg" alt="서비스 로고" width={48} height={48} />
@@ -39,6 +26,7 @@ const Home: NextPage = () => {
 
       <div className="px-8 pb-8">
         <div className="flex gap-6">
+          {/* Sidebar */}
           <aside className="w-64 bg-white rounded-2xl p-6 flex flex-col items-center">
             <h2 className="text-xl font-semibold mb-2 text-black">
               {userName}
@@ -63,6 +51,7 @@ const Home: NextPage = () => {
             </ul>
           </aside>
 
+          {/* Main Content */}
           <main className="flex-1 bg-white rounded-2xl p-6 flex flex-col">
             <div className="flex justify-end mb-6">
               <select className="ml-4 text-gray-700 border border-gray-300 rounded">
@@ -71,8 +60,9 @@ const Home: NextPage = () => {
               </select>
             </div>
 
+            {/* 카드 그리드: state에서 불러온 cards 사용 */}
             <div className="grid grid-cols-3 grid-rows-2 gap-6 flex-grow">
-              {cards.map((card) => (
+              {cards.map((card: Card) => (
                 <div key={card.id} className={styles.card}>
                   <div className={styles.cardImage} />
                   <p className={styles.cardText}>{card.text}</p>
@@ -80,7 +70,6 @@ const Home: NextPage = () => {
               ))}
             </div>
 
-            {/* Pagination & Action */}
             <div className="mt-6 flex flex-col">
               <div className="flex justify-center space-x-2">
                 {[1, 2, 3].map((page) => (
