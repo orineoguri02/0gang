@@ -23,7 +23,10 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="wrapper">
+
+  <div className="wrapper">
+    {/* 2. 로고 추가 (public/book.png 경로) */}
+    <img src="/book.png" alt="학교록 로고" className="logo" />
       <div className="form-container">
         <h1 className="title">로그인</h1>
         <form onSubmit={handleSubmit}>
@@ -50,39 +53,35 @@ export default function LoginPage() {
 
       {/* styled-jsx 로 CSS 작성 */}
       <style jsx>{`
-        .wrapper {
+      
+        .wrapper {  
           display: flex;
           justify-content: center;
           align-items: center;
           height: 100vh;
           background: linear-gradient(
             135deg,
-            #fffefa 0%,
-            #f9f0ec 100%
+rgb(255, 255, 255) 0%,
+rgb(254, 254, 254) 100%
           );
         }
-        .form-container {
-          background: #fff;
-          border-radius: 12px;
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-          padding: 32px;
-          width: 100%;
-          max-width: 360px;
-          
-        }
+        
         .title {
-  margin: 0 0 24px;
-  text-align: center;
-  font-size: 1.75rem;
- color: #333;
- color: #000;   /* 검정색으로 변경 */
-}
+         margin: 0 0 32px;      
+         text-align: center;
+         font-size: 1.75rem;
+         color: #000;      
+         margin-top: 250px;  
+      }
         .fields {
           display: flex;
           flex-direction: column;
           border: 1px solid #ddd;
           border-radius: 8px;
           overflow: hidden;
+          width: 400px;
+          margin-top: 5px;
+          
         }
         .fields input {
           font-size: 1rem;
@@ -104,18 +103,19 @@ export default function LoginPage() {
           text-align: center;
         }
         button {
-          margin-top: 24px;
-          width: 100%;
-          padding: 12px;
-          font-size: 1rem;
-          border: none;
-          border-radius: 8px;
-          background-color: #f7c6c0;
-          cursor: pointer;
-          transition: background-color 0.2s;
-        }
-        button:hover {
-          background-color: #e9b1ab;
+        margin-top: 24px;
+        width: 100%;
+        padding: 12px;
+        font-size: 1rem;
+        border: none;
+        border-radius: 8px;
+
+        
+        background-color: #A3B79C;
+        color: #000;
+
+        cursor: pointer;
+        transition: background-color 0.2s;
         }
       `}</style>
     </div>
