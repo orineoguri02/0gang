@@ -1,7 +1,6 @@
-// pages/index.tsx
 import { useState } from "react";
 import { useRouter } from "next/router";
-
+import "../styles/login.css";
 export default function LoginPage() {
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
@@ -23,10 +22,8 @@ export default function LoginPage() {
   };
 
   return (
-
-  <div className="wrapper">
-    {/* 2. 로고 추가 (public/book.png 경로) */}
-    <img src="/book.png" alt="학교록 로고" className="logo" />
+    <div className="wrapper">
+      <img src="/book.jpg" alt="학교록 로고" className="logo" />
       <div className="form-container">
         <h1 className="title">로그인</h1>
         <form onSubmit={handleSubmit}>
@@ -50,74 +47,6 @@ export default function LoginPage() {
           <button type="submit">로그인</button>
         </form>
       </div>
-
-      {/* styled-jsx 로 CSS 작성 */}
-      <style jsx>{`
-      
-        .wrapper {  
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          height: 100vh;
-          background: linear-gradient(
-            135deg,
-rgb(255, 255, 255) 0%,
-rgb(254, 254, 254) 100%
-          );
-        }
-        
-        .title {
-         margin: 0 0 32px;      
-         text-align: center;
-         font-size: 1.75rem;
-         color: #000;      
-         margin-top: 250px;  
-      }
-        .fields {
-          display: flex;
-          flex-direction: column;
-          border: 1px solid #ddd;
-          border-radius: 8px;
-          overflow: hidden;
-          width: 400px;
-          margin-top: 5px;
-          
-        }
-        .fields input {
-          font-size: 1rem;
-          padding: 12px;
-          border: none;
-          color: #000;
-        }
-        .fields input:not(:last-child) {
-          border-bottom: 1px solid #ddd;
-        }
-        .fields input:focus {
-          outline: none;
-          background: #fafafa;
-        }
-        .error {
-          margin: 8px 0 0;
-          color: #d33;
-          font-size: 0.9rem;
-          text-align: center;
-        }
-        button {
-        margin-top: 24px;
-        width: 100%;
-        padding: 12px;
-        font-size: 1rem;
-        border: none;
-        border-radius: 8px;
-
-        
-        background-color: #A3B79C;
-        color: #000;
-
-        cursor: pointer;
-        transition: background-color 0.2s;
-        }
-      `}</style>
     </div>
   );
 }
