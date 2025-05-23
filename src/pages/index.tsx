@@ -8,21 +8,17 @@ export default function LoginPage() {
   const [error, setError] = useState<string | null>(null);
   const router = useRouter();
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
 
-    const res = await fetch("/api/login", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ id, password }),
-    });
-    const data = await res.json();
-
-    if (res.ok) {
-      router.push("/dashboard");
+    // 서버 호출 없이, 단순히 빈 값 아닌지만 확인
+    if (id.trim() !== "" && password.trim() !== "") {
+      // 로그인 성공 → 대시보드로 이동
+      router.push("/main/index");
     } else {
-      setError(data.message);
+      // 로그인 실패 → 에러 메시지
+      setError("아이디와 비밀번호를 모두 입력해주세요.");
     }
   };
 
@@ -47,7 +43,7 @@ export default function LoginPage() {
               required
             />
           </div>
-          {error && <p className="error">{error}</p>} 
+          {error && <p className="error">{error}</p>}
           <button type="submit">로그인</button>
         </form>
       </div>
@@ -75,11 +71,12 @@ export default function LoginPage() {
           
         }
         .title {
-          margin: 0 0 24px;
-          text-align: center;
-          font-size: 1.75rem;
-          color: #333;
-        }
+  margin: 0 0 24px;
+  text-align: center;
+  font-size: 1.75rem;
+ color: #333;
+ color: #000;   /* 검정색으로 변경 */
+}
         .fields {
           display: flex;
           flex-direction: column;
@@ -91,6 +88,7 @@ export default function LoginPage() {
           font-size: 1rem;
           padding: 12px;
           border: none;
+          color: #000;
         }
         .fields input:not(:last-child) {
           border-bottom: 1px solid #ddd;
