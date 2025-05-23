@@ -1,0 +1,206 @@
+@font-face {
+  font-family: 'Gyeonggi_Title_Medium';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2410-3@1.0/Title_Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+
+.container {
+  max-width: 100%;
+  min-height: 100vh;
+  padding: 50px;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  position: relative;
+  padding-left: 150px;
+}
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 60px;
+  padding-left: 20px;
+}
+
+.logo {
+  width: 90px;
+  height: 110px;
+}
+
+.title {
+  color: #000;
+  font-family: Gyeonggi_Title_Medium;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  padding-left: 20px;
+}
+
+
+.card {
+  width: 100%;
+  max-width: 1320px;
+  height: auto;
+  border-radius: 50px;
+  border: 2px solid #A3C9A8;
+  padding: 40px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.questionRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 70px;
+  padding-right: 30px;
+  padding-bottom: 40px;
+}
+
+.cancelIcon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.logoWrapper {
+  margin-top: 50px;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 70px;
+}
+
+
+
+.question {
+  color: #2E2E2E;
+  font-family: Pretendard;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+
+.meta {
+  padding-left: 70px;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border-bottom: 1px solid rgba(85, 85, 85, 0.33);; 
+}
+
+.metaRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 14px;
+  color: #555;
+  font-family: Pretendard;
+  font-weight: 400;
+  padding-bottom: 15px;
+}
+
+.metaLabels {
+  padding-left: 20px;
+  color: #555;
+  font-family: Pretendard;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.metaLabel {
+  padding-left: 20px;
+  color: #555;
+  font-family: Pretendard;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding-right: 23px;
+}
+
+.metaRow .input{
+  color: #555;
+  font-family: Pretendard;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.metaValue {
+  color: #555;
+  padding-left: 40px;
+  font-family: Pretendard;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.inputs {
+  padding-top: 5px;
+  padding: 15 70px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 40px;
+  padding-left: 82px;
+}
+
+.inputs label {
+  color: #555;
+  font-family: Pretendard;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.input {
+  font-family: Pretendard;
+  font-size: 16px;
+  font-weight: 400;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #2E2E2E;
+  padding-left: 16px;
+}
+
+.input::placeholder {
+  color: #2E2E2E;
+}
+
+.buttonWrapper {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 70px;
+}
+
+.button {
+  color: #2E2E2E;
+  width: 102px;
+  height: 45px;
+  font-family: Pretendard;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 50px;
+  background: #A3C9A8;
+  border: none;
+  cursor: pointer;
+}
+
+.logoWrapper {
+  margin-top: 50px;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 70px;
+}
