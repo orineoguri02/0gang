@@ -20,9 +20,14 @@ const Home: NextPage = () => {
       {/* Header */}
       <header className="flex items-center justify-between px-8 py-6">
         <div className="flex items-center space-x-4">
-          <Image src="/logo.jpg" alt="서비스 로고" width={48} height={48} />
+          <Image src="/book.png" alt="서비스 로고" width={48} height={48} />
           <h1 className={styles.title}>학고록</h1>
         </div>
+          <div className={styles.loginWrapper}>
+            <Link href="/login">
+              <Image src="/login.png" alt="서비스 로고" width={36} height={36} />
+            </Link>
+          </div>
       </header>
 
       <div className="px-8 pb-8">

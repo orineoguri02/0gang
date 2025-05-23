@@ -1,3 +1,25 @@
+@font-face {
+  font-family: 'Gyeonggi_Title_Medium';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2410-3@1.0/Title_Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+.title{
+  color: #000;
+  font-family: Gyeonggi_Title_Medium;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  }
+
+.loginWrapper {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 70px; /* 원하는 만큼 조절 */
+}
+
 .card {
   width: 294px;
   border-radius: 1rem;
