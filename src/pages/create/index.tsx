@@ -4,6 +4,7 @@ import Image from 'next/image';
 import styles from './learn.module.css';
 import { useEffect, useState } from 'react';
 import { postLearningNote } from '@/lib/axiosMain';
+import Link from 'next/link';
 
 const QUESTIONS = [
   '오늘 수업이 주는 가장 중요한 질문은 무엇이었을까?',
@@ -48,7 +49,7 @@ export default function LearningNote() {
     <div className={styles.container}>
       {/* 상단 로고 + 닫기 */}
       <div className={styles.titleRow}>
-          <Image src="/Group 32.png" alt="로고" width={60} height={60} className={styles.logo} />
+          <Image src="/book.png" alt="로고" width={60} height={60} className={styles.logo} />
           <h1 className={styles.title}>학고록</h1>
       </div>
 
@@ -95,9 +96,11 @@ export default function LearningNote() {
           </div>
 
           <div className={styles.buttonWrapper}>
-            <button className={styles.button} onClick={handleSubmit}>
-              회고하기
-            </button>
+                <Link href="/">
+                  <button className={styles.button} onClick={handleSubmit}>
+                    회고하기
+                  </button>
+                </Link>
           </div>
         </div>
       </div>
